@@ -75,18 +75,20 @@ color: rgb(120, 206, 9) !important;
     height: 3px;
     width: 0;
     right: 0;
+    background-color: #242424;
     transition: all 300ms ease;
 }
 
-.link__hover-effect--white:after{
+.link__hover-effect--white::after{
     color: #fff;
 }
 
-.link__hover-effect--black:after{
+.link__hover-effect--black::after{
     color: #242424;
+    text-decoration: underline;
 }
 
-.link__hover-effect:hover:after {
+.link__hover-effect:hover::after {
     left: 0;
     width: 100%;
 }
