@@ -8,6 +8,17 @@
     <title>Destin Strong</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/8150e2e6ad.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "1FrLFn3EZpxfclVYt",
+      });
+   })();
+</script>
 </head>
 
 <body>
@@ -31,14 +42,14 @@
                     link__hover-effect--black
                     ">Projects</a>
                 </li>
-                <li class="nav__link">
+                <li class="nav__link" onclick="toggleModal()">
                     <a href="#" class="
                     nav__link--anchor
                     link__hover-effect
                     link__hover-effect--black
                     ">Contact</a>
                 </li>
-                <li class="nav__link">
+                <li class="nav__link click" onclick="toggleContrast()">
                     <a href="#" class="
                     nav__link--anchor
                     link__hover-effect
@@ -56,7 +67,7 @@
                     about creating beautiful and functional websites that provide a great user experience. I'm always
                     looking for new opportunities to learn and grow as a developer. Let's work together!
                     <br>
-                    Here's a bit more <b class="green">about me</b>.
+                    Here's a bit more <b class="green click" onclick="toggleModal()">about me</b>.
                 </p>
                 <div class="social__list">
                     <a href="https://www.linkedin.com/in/destin-strong-904467349" target="_blank"
@@ -72,12 +83,78 @@
                 </div>
             </div>
         </header>
-        <button class="mail__btn click">
+        <button class="mail__btn click" onclick="toggleModal()">
             <i class="fas fa-envelope"></i>
         </button>
         <a href="#projects" class="scroll">
             <div class="scroll__icon click"></div>
         </a>
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
+                <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer</h4>
+                <p class="modal__para">I'm a 35 year-old American <b class="green">frontend software engineer</b> just starting out on my
+                    passion for developing websites with <b class="green">amazing user experiences.</b>
+                    <br>My journey into the world of coding began in 2024 when I enrolled in a coding bootcamp. I'm
+                    excited to start working on teams to create <b class="green">innovative</b> and <b class="green">user-friendly</b> websites.<br>
+                </p>
+                <div class="modal__languages">
+                    <figure class="modal__language">
+                        <i class="fa-brands fa-html5 fa-beat fa-2xl" class="modal__language--img" style="color: #e82121;" ></i>
+                        <span class="language__name">HTML</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <i class="fa-brands fa-js fa-beat fa-2xl" class="modal__language--img" style="color: #FFD43B;" ></i>
+                        <span class="language__name">JavaScript</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <i class="fa-brands fa-css3-alt fa-beat fa-2xl" class="modal__language--img" style="color: #419ce1;" ></i>
+                        <span class="language__name">CSS</span>
+                    </figure>
+                </div>
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+                <h3 class="modal__title modal__title--contact">
+                    Let's have a chat!
+                </h3>
+                <h3 class="modal__sub-title modal__sub-title--contact">
+                    I'm currently open to new opportunities.
+                </h3>
+                <form id="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label class="form__item--label">Name</label>
+                        <input class="input" name="user-name" type="text" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">E-mail</label>
+                        <input class="input" name="user-email" type="email" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Message</label>
+                        <textarea class="input" name="message" type="text" required></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">
+                        Send it my way
+                    </button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thanks for the message! Looking forward to speaking to you soon.
+                </div>
+            </div>
+        </div>
+        <img src="assets/semi circle.svg" class="shape shape--0">
+        <img src="assets/circle.svg" class="shape shape--1">
+        <img src="assets/squiggly.svg" class="shape shape--2">
+        <img src="assets/circle.svg" class="shape shape--3">
+        <img src="assets/triangle.svg" class="shape shape--4">
+        <img src="assets/circle.svg" class="shape shape--5">
+        <img src="assets/squiggly.svg" class="shape shape--6">
+        <img src="assets/circle.svg" class="shape shape--7">
+        <img src="assets/semi circle.svg" class="shape shape--8">
     </section>
     <section id="projects">
         <div class="container">
@@ -130,32 +207,32 @@
                     link__hover-effect--white
                     ">
                         GitHub
-                </a>
+                    </a>
                     <a href="https://github.com/Dez10" class="
                     footer__social--link
                     link__hover-effect
                     link__hover-effect--white
                     ">
                         LinkedIn
-                </a>
+                    </a>
                     <a href="https://github.com/Dez10" class="
                     footer__social--link
                     link__hover-effect
                     link__hover-effect--white
                     ">
                         Contact
-                </a>
+                    </a>
                     <a href="https://github.com/Dez10" class="
                     footer__social--link
                     link__hover-effect
                     link__hover-effect--white
                     ">
                         Resume
-                </a>
+                    </a>
                 </div>
                 <div class="footer__copyright">Copyright © 2025 Destin Strong</div>
             </div>
-            
+
         </div>
     </footer>
 
